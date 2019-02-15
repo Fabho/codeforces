@@ -1,34 +1,34 @@
 // Fabho
 // A_Word
 
-#include<iostream>
-#include<cctype>
+#include <iostream>
+#include <cctype>
 using namespace std;
-
 int main(){
-string n,salida;
-int mayus,minus;
-while(cin>>n){
-     mayus=minus=0;
-     salida="";
-     for(int a=0;a<n.size();a++)
-        {
-          if(isupper(n[a]))
-             mayus++;
-          else
-             minus++;
-        }
-   if(mayus>minus)
-     {
-      for(int x=0;x<n.size();x++)
-          salida+=toupper(n[x]);
+string word;
+int minu,mayu;
 
-     }
-   else{
-        for(int x=0;x<n.size();x++)
-          salida+=tolower(n[x]);
-       }
-   cout<<salida<<endl;
+while(cin>>word){
+minu = mayu = 0;
+
+for(int a=0; a<word.size(); a++)
+   {
+     if(isupper(word[a]))
+        mayu++;
+     else
+         minu++;
+   }
+
+if(mayu>minu){
+   for(int x=0; x<word.size(); x++)
+      word[x] = toupper(word[x]);
+  }
+else{
+     for(int x=0; x<word.size(); x++)
+         word[x] = tolower(word[x]);
+    }
+cout<<word<<endl;
 }
 return 0;
 }
+
